@@ -56,7 +56,7 @@ int main() {
       VECTOR_SIZE *= 4;
   #endif
 
-  std::cout << std::format(std::locale("en_US.UTF-8"), "Running {:L} random accesses in {} runs on {:L} MB data vector.\n",
+  std::cout << std::format("Running {:L} random accesses in {} runs on {:L} MB data vector.\n",
                            RANDOM_ACCESS_COUNT, MEASUREMENT_COUNT, (sizeof(uint32_t)*VECTOR_SIZE)/1000/1000);
 
   auto random_engine = std::default_random_engine();
@@ -68,14 +68,14 @@ int main() {
   for (auto index = size_t{0}; index < VECTOR_SIZE; ++index) {
     vec[index] = value_distribution(random_engine);
   }
-  std::cout << "done\n";
+  std::cout << "done.\n";
 
   std::cout << "Creating position list ... " << std::flush;
   auto access_positions = std::vector<uint64_t>(RANDOM_ACCESS_COUNT);
   for (auto index = size_t{0}; index < RANDOM_ACCESS_COUNT; ++index) {
     access_positions[index] = position_distribution(random_engine);
   }
-  std::cout << "done\n";
+  std::cout << "done.\n";
 
   auto random_device = std::random_device{};
   auto generator = std::mt19937{random_device()};
@@ -134,9 +134,10 @@ int main() {
     char hostname[255];
     gethostname(hostname, sizeof(hostname));
     auto output_stream = std::ofstream{std::string{"plotting/prefetching/"} + hostname + ".csv"};
-    output_stream << "NAME,LOCALITY,OFFSET,RUNTIME_S\n";
+    output_stream << "MACHINE,NAME,VECTOR_SIZE,LOCALITY,OFFSET,RUNTIME_S\n";
     for (const auto& [key, runtimes] : results) {
-      const auto header = std::format("\"{}\",{},{},", std::get<0>(key), std::get<1>(key), std::get<2>(key));
+      const auto header = std::format("\"{}\",\"{}\",{},{},{},", hostname, std::get<0>(key), VECTOR_SIZE,
+                                      std::get<1>(key), std::get<2>(key));
       for (const auto runtime : runtimes) {
         output_stream << header << runtime << "\n";
       }
