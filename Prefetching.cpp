@@ -52,7 +52,7 @@ int main() {
   const auto offsets = std::vector<uint16_t>{1, 2, 4, 8, 16, 32, 64, 128, 256};
 
   #ifdef SERVER
-      MEASUREMENT_COUNT *= 1;
+      MEASUREMENT_COUNT *= 10;
       VECTOR_SIZE *= 4;
   #endif
 
@@ -80,7 +80,9 @@ int main() {
   auto random_device = std::random_device{};
   auto generator = std::mt19937{random_device()};
   auto results = std::map<std::tuple<std::string, int, uint16_t>, std::deque<double>>{};
+  std::cout << "Running measurement run" << std::flush;
   for (auto measurement_id = size_t{0}; measurement_id < MEASUREMENT_COUNT + 1; ++measurement_id) {  
+    std::cout << " #" << measurement_id << std::flush;
     std::shuffle(access_positions.begin(), access_positions.end(), generator);
 
     
@@ -123,6 +125,7 @@ int main() {
       }
     }
   }
+  std::cout << std::endl;
 
   for (const auto& [key, runtimes] : results) {
     std::cout << std::format("{: <16} - Locality: {: } - Offset: {:3} - Avg. runtime: {:2.5f} s\n", std::get<0>(key),
@@ -133,10 +136,11 @@ int main() {
   #ifdef SERVER
     char hostname[255];
     gethostname(hostname, sizeof(hostname));
-    auto output_stream = std::ofstream{std::string{"plotting/prefetching/"} + hostname + ".csv"};
+    const auto hostname_string = std::string(hostname);
+    auto output_stream = std::ofstream{std::string{"plotting/prefetching/"} + hostname_string + ".csv"};
     output_stream << "MACHINE,NAME,VECTOR_SIZE,LOCALITY,OFFSET,RUNTIME_S\n";
     for (const auto& [key, runtimes] : results) {
-      const auto header = std::format("\"{}\",\"{}\",{},{},{},", hostname, std::get<0>(key), VECTOR_SIZE,
+      const auto header = std::format("\"{}\",\"{}\",{},{},{},", hostname_string, std::get<0>(key), VECTOR_SIZE,
                                       std::get<1>(key), std::get<2>(key));
       for (const auto runtime : runtimes) {
         output_stream << header << runtime << "\n";
