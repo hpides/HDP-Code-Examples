@@ -59,7 +59,7 @@ int main() {
   #endif
 
   #ifdef LARGE
-      VECTOR_SIZE *= 14;
+      VECTOR_SIZE *= 4;
   #endif
 
   std::cout << std::format("Running {:L} random accesses in {} runs on {:L} MB data vector.\n",
