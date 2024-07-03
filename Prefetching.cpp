@@ -1,6 +1,8 @@
 /**
  * Compile prefetching experiment (to write CSV files for plotting, append `-DSERVER`):
- *   clang++ Prefetching.cpp -O3 -o prefetching -std=c++20 -Wall -Wextra -pedantic
+ *   clang++ Prefetching.cpp -O3 -o prefetching -std=c++20
+ *   
+ * To check which prefetching instructions are emitted, append `-S` to command above to output the generated code.
  */
 
 #include <unistd.h>  // gethostname()
@@ -54,6 +56,10 @@ int main() {
   #ifdef SERVER
       MEASUREMENT_COUNT *= 10;
       VECTOR_SIZE *= 4;
+  #endif
+
+  #ifdef LARGE
+      VECTOR_SIZE *= 14;
   #endif
 
   std::cout << std::format("Running {:L} random accesses in {} runs on {:L} MB data vector.\n",
@@ -137,7 +143,9 @@ int main() {
     char hostname[255];
     gethostname(hostname, sizeof(hostname));
     const auto hostname_string = std::string(hostname);
-    auto output_stream = std::ofstream{std::string{"plotting/prefetching/"} + hostname_string + ".csv"};
+    const auto vector_size_in_gb = (sizeof(uint32_t) * VECTOR_SIZE) / 1000 / 1000 / 1000;
+    const auto filename = std::format("plotting/prefetching/{}_{}GB.csv", hostname_string, vector_size_in_gb);
+    auto output_stream = std::ofstream{filename};
     output_stream << "MACHINE,NAME,VECTOR_SIZE,LOCALITY,OFFSET,RUNTIME_S\n";
     for (const auto& [key, runtimes] : results) {
       const auto header = std::format("\"{}\",\"{}\",{},{},{},", hostname_string, std::get<0>(key), VECTOR_SIZE,
