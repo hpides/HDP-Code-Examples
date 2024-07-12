@@ -56,9 +56,9 @@ int main() {
         run_count = 5;
     #endif
 
-    // 1 KB to 1 GB.
+    
     for (auto run_id = size_t{0}; run_id < run_count; ++run_id) {
-        for (auto index = size_t{0}; index < 24; ++index) {
+        for (auto index = size_t{0}; index < 25; ++index) {  // 1 KB to 16 GB.
         //for (auto index = size_t{0}; index < 5; ++index) {
             const auto element_count = size_t{128} << index;
             const auto duration = run_bm(element_count);

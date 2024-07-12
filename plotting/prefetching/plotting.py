@@ -17,16 +17,16 @@ df["KEY"] = df.NAME + " (Locality: " + df.LOCALITY.map(str) + ")"
 df["VECTOR_SIZE_STR"] = (df.VECTOR_SIZE*4 / 1000 / 1000 / 1000).map(str) + " GB"
 
 replacements = {"nemea": "Intel Xeon Platinum 8180",
-                 "Peteretina.local": "Apple M2 Max",
-                 "cx13": "Intel Xeon Gold 5220S",
-                 "cp01": "IBM Power9",
-                 "cp02": "IBM Power8",
-                 "cp03": "IBM Power10",
-                 "nx03": "Intel Xeon Gold 6240L (Cascade Lake, nx03)",
-                 "nx04": "Intel Xeon Gold 6240L (Cascade Lake, nx04)",
-                 "nx05": "Intel Xeon Platinum 8352Y (Ice Lake, nx05)",
-                 "nx06": "Intel Xeon Platinum 8352Y (Ice Lake, nx06)",
-                }
+                "Peteretina.local": "Apple M2 Max",
+                "cx13": "Intel Xeon Gold 5220S",
+                "cp01": "IBM Power9",
+                "cp02": "IBM Power8",
+                "cp03": "IBM Power10",
+                "nx03": "Intel Xeon Gold 6240L (Cascade Lake, nx03)",
+                "nx04": "Intel Xeon Gold 6240L (Cascade Lake, nx04)",
+                "nx05": "Intel Xeon Platinum 8352Y (Ice Lake, nx05)",
+                "nx06": "Intel Xeon Platinum 8352Y (Ice Lake, nx06)",
+               }
 
 for id in range(1, 17):
     replacements[f"cx{id:02}"] = f"Intel Xeon Gold 5220S (Cascade Lake, cx{id:02})"
