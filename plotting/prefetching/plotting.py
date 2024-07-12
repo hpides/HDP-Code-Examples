@@ -14,18 +14,33 @@ df = pd.concat(dataframes, ignore_index=True)
 
 df["RUNTIME_MS"] = df.RUNTIME_S * 1000
 df["KEY"] = df.NAME + " (Locality: " + df.LOCALITY.map(str) + ")"
-df["VECTOR_SIZE_STR"] = (df.VECTOR_SIZE / 1000 / 1000 / 1000).map(str) + " GB"
+df["VECTOR_SIZE_STR"] = (df.VECTOR_SIZE*4 / 1000 / 1000 / 1000).map(str) + " GB"
 
-df = df.replace({"nemea": "Intel Xeon Platinum 8180",
+replacements = {"nemea": "Intel Xeon Platinum 8180",
                  "Peteretina.local": "Apple M2 Max",
-                 "nx05": "Intel Xeon Platinum 8352Y",
-                 "cx16": "Intel Xeon Gold 5220S",
+                 "cx13": "Intel Xeon Gold 5220S",
+                 "cp01": "IBM Power9",
+                 "cp02": "IBM Power8",
                  "cp03": "IBM Power10",
-                 "cx18": "AMD EPYC 7742 (16 GB)",
-                 "cx27": "AMD EPYC 7742 (40 GB)"},
-                 regex=True)
+                 "nx03": "Intel Xeon Gold 6240L (Cascade Lake, nx03)",
+                 "nx04": "Intel Xeon Gold 6240L (Cascade Lake, nx04)",
+                 "nx05": "Intel Xeon Platinum 8352Y (Ice Lake, nx05)",
+                 "nx06": "Intel Xeon Platinum 8352Y (Ice Lake, nx06)",
+                }
 
-g = sns.FacetGrid(df, col="MACHINE", row="VECTOR_SIZE_STR", height=4, sharex=True, sharey=False, legend_out=True, margin_titles=True)
+for id in range(1, 17):
+    replacements[f"cx{id:02}"] = f"Intel Xeon Gold 5220S (Cascade Lake, cx{id:02})"
+
+for id in range(17, 33):
+    replacements[f"cx{id:02}"] = f"AMD EPYC 7742 (cx{id:02})"
+
+for id in range(1, 5):
+    replacements[f"gp{id:02}"] = f"IBM Power9 (gp{id:02})"
+
+df = df.replace(replacements, regex=True)
+
+g = sns.FacetGrid(df, col="MACHINE", row="VECTOR_SIZE_STR", height=4, sharex=True, sharey=False, legend_out=True,
+                  margin_titles=True, col_order=sorted(pd.unique(df.MACHINE)), row_order=sorted(pd.unique(df.VECTOR_SIZE_STR)))
 
 
 def custom_lineplot(data, **kwargs):
@@ -51,4 +66,5 @@ g.fig.suptitle("Random Position List Summation\nRuntime Comparison for Different
 # g.tight_layout()
 
 # Show the plot
-plt.show()
+# plt.show()
+plt.savefig("result.pdf")

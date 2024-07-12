@@ -21,10 +21,10 @@ auto sum = size_t{0};
 
 size_t run_bm(size_t element_count) {
     auto data = std::vector<uint64_t>(element_count);
-    
+
     auto random_device = std::random_device{};
     auto generator = std::mt19937{random_device()};
- 
+
     std::iota(data.begin(), data.end(), 0);
     std::shuffle(data.begin(), data.end(), generator);
 
@@ -32,10 +32,10 @@ size_t run_bm(size_t element_count) {
     for (auto index = size_t{0}; index < element_count; ++index) {
         sum += data[index];
     }
-            
+
     // Actually run the benchmark.
     const auto start = std::chrono::steady_clock::now();
-    
+
     size_t next_position = size_t{0};
     for (auto index = size_t{0}; index < NUM_OPS; ++index) {
         next_position = data[next_position];
@@ -44,7 +44,7 @@ size_t run_bm(size_t element_count) {
 
     const auto end = std::chrono::steady_clock::now();
     const auto duration = (end - start);
- 
+
     return duration.count();
 }
 
@@ -74,13 +74,13 @@ int main() {
                 const auto mb = bytes / 1024 / 1024;
                 std::cout << mb << " MB";
             }
-        
+
             std::cout << " took " << ns_per_access << " ns per access (" << element_count << " elements)" << std::endl;
  
             csv_partials.emplace_back(std::format("{},{},{},{}", run_id, element_count, bytes, duration));
         }
     }
- 
+
     // Print sum to avoid optimization (might overflow).
     std::cout << "Sum = " << sum << std::endl;
 
