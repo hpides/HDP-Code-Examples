@@ -55,7 +55,7 @@ int main(int argc, char * argv[]) {
          std::exit(17);
        }
        std::cout << "Early out for measuring data creation only.\n";
-       std::exit(17);
+       std::exit(0);
     }
 
     // Start measurement

@@ -1,0 +1,101 @@
+MEASUREMENT,PERF_METRIC,JOULES,RUNTIME_S
+Data Generation,power/energy-pkg/,427.03,3.1343157291412354
+Idling,power/energy-pkg/,1203.23,10.031661033630371
+Data Generation,power/energy-pkg/,426.07,3.12752366065979
+Idling,power/energy-pkg/,1169.68,10.028548002243042
+Data Generation,power/energy-pkg/,426.53,3.1299283504486084
+Idling,power/energy-pkg/,1173.95,10.02906346321106
+Data Generation,power/energy-pkg/,426.51,3.12947940826416
+Idling,power/energy-pkg/,1181.84,10.028560161590576
+Data Generation,power/energy-pkg/,426.76,3.1310439109802246
+Idling,power/energy-pkg/,1184.49,10.028871774673462
+Sorting,power/energy-pkg/,3363.84,24.605769634246826
+Sorting,power/energy-pkg/,3365.72,24.601139545440674
+Sorting,power/energy-pkg/,3366.27,24.58523178100586
+Sorting,power/energy-pkg/,3366.84,24.596592664718628
+Sorting,power/energy-pkg/,3370.73,24.607733011245728
+Data Generation,power/energy-pkg/,429.74,3.14447021484375
+Idling,power/energy-pkg/,1194.49,10.0302095413208
+Data Generation,power/energy-pkg/,430.34,3.1474342346191406
+Idling,power/energy-pkg/,1193.56,10.028794288635254
+Data Generation,power/energy-pkg/,430.19,3.144563674926758
+Idling,power/energy-pkg/,1170.51,10.02909255027771
+Data Generation,power/energy-pkg/,429.31,3.1440787315368652
+Idling,power/energy-pkg/,1172.41,10.02927541732788
+Data Generation,power/energy-pkg/,428.95,3.1409335136413574
+Idling,power/energy-pkg/,1182.04,10.02925157546997
+Sorting,power/energy-pkg/,4214.92,30.687151432037354
+Sorting,power/energy-pkg/,4225.85,30.7413067817688
+Sorting,power/energy-pkg/,4220.32,30.679579734802246
+Sorting,power/energy-pkg/,4221.44,30.682820558547974
+Sorting,power/energy-pkg/,4220.63,30.672975540161133
+Sorting,power/energy-pkg/,2409.51,16.989267826080322
+Sorting,power/energy-pkg/,2410.05,16.976613998413086
+Sorting,power/energy-pkg/,2410.26,16.98007035255432
+Sorting,power/energy-pkg/,2410.37,16.978389739990234
+Sorting,power/energy-pkg/,2411.76,16.987339973449707
+Sorting,power/energy-pkg/,1867.09,12.860307455062866
+Sorting,power/energy-pkg/,1799.52,12.357219457626343
+Sorting,power/energy-pkg/,1800.57,12.359597206115723
+Sorting,power/energy-pkg/,1922.11,13.257933139801025
+Sorting,power/energy-pkg/,1800.66,12.353177070617676
+Sorting,power/energy-pkg/,1516.77,10.119770765304565
+Sorting,power/energy-pkg/,1520.94,10.121182918548584
+Sorting,power/energy-pkg/,1519.93,10.109006881713867
+Sorting,power/energy-pkg/,1522.26,10.123052597045898
+Sorting,power/energy-pkg/,1520.19,10.123302221298218
+Sorting,power/energy-pkg/,1336.60,8.730217695236206
+Sorting,power/energy-pkg/,1324.46,8.673401117324829
+Sorting,power/energy-pkg/,1339.98,8.743759632110596
+Sorting,power/energy-pkg/,1332.11,8.674928903579712
+Sorting,power/energy-pkg/,1327.15,8.676337957382202
+Sorting,power/energy-pkg/,1204.80,7.765824556350708
+Sorting,power/energy-pkg/,1201.74,7.761451482772827
+Sorting,power/energy-pkg/,1208.14,7.764612674713135
+Sorting,power/energy-pkg/,1205.16,7.7690393924713135
+Sorting,power/energy-pkg/,1210.34,7.766917943954468
+Sorting,power/energy-pkg/,1116.09,7.113739013671875
+Sorting,power/energy-pkg/,1122.46,7.111668109893799
+Sorting,power/energy-pkg/,1120.36,7.142142295837402
+Sorting,power/energy-pkg/,1152.94,7.353979110717773
+Sorting,power/energy-pkg/,1206.97,7.779076814651489
+Sorting,power/energy-pkg/,1058.12,6.653378248214722
+Sorting,power/energy-pkg/,1053.84,6.640796422958374
+Sorting,power/energy-pkg/,1055.82,6.634443998336792
+Sorting,power/energy-pkg/,1053.49,6.63602614402771
+Sorting,power/energy-pkg/,1059.17,6.639467000961304
+Sorting,power/energy-pkg/,1003.44,6.270568609237671
+Sorting,power/energy-pkg/,1009.11,6.314474105834961
+Sorting,power/energy-pkg/,1002.27,6.254267692565918
+Sorting,power/energy-pkg/,1015.62,6.34436821937561
+Sorting,power/energy-pkg/,1009.85,6.311108827590942
+Sorting,power/energy-pkg/,957.76,5.950128793716431
+Sorting,power/energy-pkg/,960.94,5.95119047164917
+Sorting,power/energy-pkg/,962.60,5.943416357040405
+Sorting,power/energy-pkg/,961.47,5.9421422481536865
+Sorting,power/energy-pkg/,972.85,6.002819299697876
+Sorting,power/energy-pkg/,910.38,5.5539162158966064
+Sorting,power/energy-pkg/,902.69,5.481196403503418
+Sorting,power/energy-pkg/,902.59,5.496383428573608
+Sorting,power/energy-pkg/,905.89,5.506868839263916
+Sorting,power/energy-pkg/,901.90,5.4825334548950195
+Sorting,power/energy-pkg/,826.71,4.937402248382568
+Sorting,power/energy-pkg/,825.92,4.941589117050171
+Sorting,power/energy-pkg/,828.47,4.9529640674591064
+Sorting,power/energy-pkg/,826.22,4.9475250244140625
+Sorting,power/energy-pkg/,828.32,4.937114000320435
+Sorting,power/energy-pkg/,779.15,4.597548723220825
+Sorting,power/energy-pkg/,781.40,4.602921009063721
+Sorting,power/energy-pkg/,781.04,4.599480867385864
+Sorting,power/energy-pkg/,780.63,4.613986492156982
+Sorting,power/energy-pkg/,781.42,4.603384494781494
+Sorting,power/energy-pkg/,750.40,4.38668966293335
+Sorting,power/energy-pkg/,752.81,4.398759365081787
+Sorting,power/energy-pkg/,752.26,4.387788772583008
+Sorting,power/energy-pkg/,753.68,4.400400876998901
+Sorting,power/energy-pkg/,749.99,4.398467302322388
+Sorting,power/energy-pkg/,791.02,4.434736490249634
+Sorting,power/energy-pkg/,790.91,4.421664237976074
+Sorting,power/energy-pkg/,785.58,4.366485595703125
+Sorting,power/energy-pkg/,799.14,4.4525306224823
+Sorting,power/energy-pkg/,788.21,4.386284828186035

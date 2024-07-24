@@ -1,0 +1,17 @@
+CORE_COUNT,SORT_VARIANT,DATASET_SIZE,AVG_RUNTIME_S
+1,Sequential std::sort,250000,21.477659999999997
+1,Parallel std::sort,250000,27.524540000000002
+2,Parallel std::sort,250000,13.816740000000001
+3,Parallel std::sort,250000,9.475200000000001
+4,Parallel std::sort,250000,6.96108
+5,Parallel std::sort,250000,5.518228000000001
+6,Parallel std::sort,250000,4.606634
+7,Parallel std::sort,250000,4.1400500000000005
+8,Parallel std::sort,250000,3.47864
+9,Parallel std::sort,250000,3.114182
+10,Parallel std::sort,250000,2.786286
+12,Parallel std::sort,250000,2.3365479999999996
+16,Parallel std::sort,250000,1.77282
+20,Parallel std::sort,250000,1.4362920000000001
+24,Parallel std::sort,250000,1.218896
+28,Parallel std::sort,250000,1.197212
