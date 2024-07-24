@@ -1,101 +1,101 @@
-MEASUREMENT,PERF_METRIC,JOULES,RUNTIME_S
-Data Generation,power/energy-pkg/,427.03,3.1343157291412354
-Idling,power/energy-pkg/,1203.23,10.031661033630371
-Data Generation,power/energy-pkg/,426.07,3.12752366065979
-Idling,power/energy-pkg/,1169.68,10.028548002243042
-Data Generation,power/energy-pkg/,426.53,3.1299283504486084
-Idling,power/energy-pkg/,1173.95,10.02906346321106
-Data Generation,power/energy-pkg/,426.51,3.12947940826416
-Idling,power/energy-pkg/,1181.84,10.028560161590576
-Data Generation,power/energy-pkg/,426.76,3.1310439109802246
-Idling,power/energy-pkg/,1184.49,10.028871774673462
-Sorting,power/energy-pkg/,3363.84,24.605769634246826
-Sorting,power/energy-pkg/,3365.72,24.601139545440674
-Sorting,power/energy-pkg/,3366.27,24.58523178100586
-Sorting,power/energy-pkg/,3366.84,24.596592664718628
-Sorting,power/energy-pkg/,3370.73,24.607733011245728
-Data Generation,power/energy-pkg/,429.74,3.14447021484375
-Idling,power/energy-pkg/,1194.49,10.0302095413208
-Data Generation,power/energy-pkg/,430.34,3.1474342346191406
-Idling,power/energy-pkg/,1193.56,10.028794288635254
-Data Generation,power/energy-pkg/,430.19,3.144563674926758
-Idling,power/energy-pkg/,1170.51,10.02909255027771
-Data Generation,power/energy-pkg/,429.31,3.1440787315368652
-Idling,power/energy-pkg/,1172.41,10.02927541732788
-Data Generation,power/energy-pkg/,428.95,3.1409335136413574
-Idling,power/energy-pkg/,1182.04,10.02925157546997
-Sorting,power/energy-pkg/,4214.92,30.687151432037354
-Sorting,power/energy-pkg/,4225.85,30.7413067817688
-Sorting,power/energy-pkg/,4220.32,30.679579734802246
-Sorting,power/energy-pkg/,4221.44,30.682820558547974
-Sorting,power/energy-pkg/,4220.63,30.672975540161133
-Sorting,power/energy-pkg/,2409.51,16.989267826080322
-Sorting,power/energy-pkg/,2410.05,16.976613998413086
-Sorting,power/energy-pkg/,2410.26,16.98007035255432
-Sorting,power/energy-pkg/,2410.37,16.978389739990234
-Sorting,power/energy-pkg/,2411.76,16.987339973449707
-Sorting,power/energy-pkg/,1867.09,12.860307455062866
-Sorting,power/energy-pkg/,1799.52,12.357219457626343
-Sorting,power/energy-pkg/,1800.57,12.359597206115723
-Sorting,power/energy-pkg/,1922.11,13.257933139801025
-Sorting,power/energy-pkg/,1800.66,12.353177070617676
-Sorting,power/energy-pkg/,1516.77,10.119770765304565
-Sorting,power/energy-pkg/,1520.94,10.121182918548584
-Sorting,power/energy-pkg/,1519.93,10.109006881713867
-Sorting,power/energy-pkg/,1522.26,10.123052597045898
-Sorting,power/energy-pkg/,1520.19,10.123302221298218
-Sorting,power/energy-pkg/,1336.60,8.730217695236206
-Sorting,power/energy-pkg/,1324.46,8.673401117324829
-Sorting,power/energy-pkg/,1339.98,8.743759632110596
-Sorting,power/energy-pkg/,1332.11,8.674928903579712
-Sorting,power/energy-pkg/,1327.15,8.676337957382202
-Sorting,power/energy-pkg/,1204.80,7.765824556350708
-Sorting,power/energy-pkg/,1201.74,7.761451482772827
-Sorting,power/energy-pkg/,1208.14,7.764612674713135
-Sorting,power/energy-pkg/,1205.16,7.7690393924713135
-Sorting,power/energy-pkg/,1210.34,7.766917943954468
-Sorting,power/energy-pkg/,1116.09,7.113739013671875
-Sorting,power/energy-pkg/,1122.46,7.111668109893799
-Sorting,power/energy-pkg/,1120.36,7.142142295837402
-Sorting,power/energy-pkg/,1152.94,7.353979110717773
-Sorting,power/energy-pkg/,1206.97,7.779076814651489
-Sorting,power/energy-pkg/,1058.12,6.653378248214722
-Sorting,power/energy-pkg/,1053.84,6.640796422958374
-Sorting,power/energy-pkg/,1055.82,6.634443998336792
-Sorting,power/energy-pkg/,1053.49,6.63602614402771
-Sorting,power/energy-pkg/,1059.17,6.639467000961304
-Sorting,power/energy-pkg/,1003.44,6.270568609237671
-Sorting,power/energy-pkg/,1009.11,6.314474105834961
-Sorting,power/energy-pkg/,1002.27,6.254267692565918
-Sorting,power/energy-pkg/,1015.62,6.34436821937561
-Sorting,power/energy-pkg/,1009.85,6.311108827590942
-Sorting,power/energy-pkg/,957.76,5.950128793716431
-Sorting,power/energy-pkg/,960.94,5.95119047164917
-Sorting,power/energy-pkg/,962.60,5.943416357040405
-Sorting,power/energy-pkg/,961.47,5.9421422481536865
-Sorting,power/energy-pkg/,972.85,6.002819299697876
-Sorting,power/energy-pkg/,910.38,5.5539162158966064
-Sorting,power/energy-pkg/,902.69,5.481196403503418
-Sorting,power/energy-pkg/,902.59,5.496383428573608
-Sorting,power/energy-pkg/,905.89,5.506868839263916
-Sorting,power/energy-pkg/,901.90,5.4825334548950195
-Sorting,power/energy-pkg/,826.71,4.937402248382568
-Sorting,power/energy-pkg/,825.92,4.941589117050171
-Sorting,power/energy-pkg/,828.47,4.9529640674591064
-Sorting,power/energy-pkg/,826.22,4.9475250244140625
-Sorting,power/energy-pkg/,828.32,4.937114000320435
-Sorting,power/energy-pkg/,779.15,4.597548723220825
-Sorting,power/energy-pkg/,781.40,4.602921009063721
-Sorting,power/energy-pkg/,781.04,4.599480867385864
-Sorting,power/energy-pkg/,780.63,4.613986492156982
-Sorting,power/energy-pkg/,781.42,4.603384494781494
-Sorting,power/energy-pkg/,750.40,4.38668966293335
-Sorting,power/energy-pkg/,752.81,4.398759365081787
-Sorting,power/energy-pkg/,752.26,4.387788772583008
-Sorting,power/energy-pkg/,753.68,4.400400876998901
-Sorting,power/energy-pkg/,749.99,4.398467302322388
-Sorting,power/energy-pkg/,791.02,4.434736490249634
-Sorting,power/energy-pkg/,790.91,4.421664237976074
-Sorting,power/energy-pkg/,785.58,4.366485595703125
-Sorting,power/energy-pkg/,799.14,4.4525306224823
-Sorting,power/energy-pkg/,788.21,4.386284828186035
+MEASUREMENT,DATASET_SIZE,PERF_METRIC,JOULES,RUNTIME_S,CORE_COUNT,SORT_VARIANT
+Data Generation,250000.0,power/energy-pkg/,425.82,3.1169772148132324,,
+Idling,,power/energy-pkg/,1199.96,10.026651859283447,,
+Data Generation,250000.0,power/energy-pkg/,426.00,3.1173927783966064,,
+Idling,,power/energy-pkg/,1204.89,10.023706436157227,,
+Data Generation,250000.0,power/energy-pkg/,427.15,3.134704828262329,,
+Idling,,power/energy-pkg/,1215.65,10.030293226242065,,
+Data Generation,250000.0,power/energy-pkg/,426.84,3.1321346759796143,,
+Idling,,power/energy-pkg/,1191.36,10.02913784980774,,
+Data Generation,250000.0,power/energy-pkg/,427.03,3.1283888816833496,,
+Idling,,power/energy-pkg/,1167.38,10.02928876876831,,
+Sorting,250000.0,power/energy-pkg/,3359.27,24.572322607040405,1.0,Sequential std::sort
+Sorting,250000.0,power/energy-pkg/,3365.58,24.586301803588867,1.0,Sequential std::sort
+Sorting,250000.0,power/energy-pkg/,3366.27,24.5858256816864,1.0,Sequential std::sort
+Sorting,250000.0,power/energy-pkg/,3370.52,24.62686800956726,1.0,Sequential std::sort
+Sorting,250000.0,power/energy-pkg/,3367.25,24.58722424507141,1.0,Sequential std::sort
+Data Generation,250000.0,power/energy-pkg/,432.73,3.155179262161255,,
+Idling,,power/energy-pkg/,1177.67,10.030898571014404,,
+Data Generation,250000.0,power/energy-pkg/,430.14,3.142176628112793,,
+Idling,,power/energy-pkg/,1178.30,10.028993844985962,,
+Data Generation,250000.0,power/energy-pkg/,428.26,3.136707305908203,,
+Idling,,power/energy-pkg/,1177.77,10.028987884521484,,
+Data Generation,250000.0,power/energy-pkg/,429.07,3.140510320663452,,
+Idling,,power/energy-pkg/,1170.72,10.028656721115112,,
+Data Generation,250000.0,power/energy-pkg/,428.94,3.1425600051879883,,
+Idling,,power/energy-pkg/,1171.64,10.028827905654907,,
+Sorting,250000.0,power/energy-pkg/,4215.13,30.677949905395508,1.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,4217.23,30.670172214508057,1.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,4222.48,30.679367780685425,1.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,4221.64,30.696582555770874,1.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,4223.32,30.695850372314453,1.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,2406.73,16.974104642868042,2.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,2407.63,16.970735788345337,2.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,2408.84,16.98128652572632,2.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,2408.92,16.97287106513977,2.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,2409.20,16.97643494606018,2.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1831.56,12.597304105758667,3.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1806.97,12.413534164428711,3.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1799.19,12.350058555603027,3.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,2005.96,13.888612270355225,3.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1802.85,12.364526271820068,3.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1524.43,10.135948419570923,4.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1520.35,10.127341985702515,4.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1521.56,10.128495454788208,4.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1528.50,10.137737274169922,4.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1527.07,10.12560248374939,4.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1334.34,8.705939054489136,5.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1327.93,8.677340269088745,5.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1332.19,8.681325435638428,5.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1330.43,8.686704874038696,5.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1323.61,8.664217948913574,5.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1203.86,7.778732538223267,6.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1206.81,7.7593138217926025,6.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1220.27,7.831326007843018,6.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1213.66,7.819428205490112,6.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1204.74,7.767092227935791,6.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1115.66,7.117637634277344,7.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1118.44,7.132243394851685,7.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1130.29,7.225322961807251,7.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1117.06,7.116873741149902,7.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1118.36,7.118294954299927,7.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1057.05,6.649800539016724,8.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1055.33,6.638091087341309,8.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1059.34,6.644657135009766,8.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1053.38,6.626791954040527,8.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1057.77,6.63807487487793,8.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1002.47,6.254287004470825,9.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1001.28,6.255775213241577,9.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1003.08,6.241153955459595,9.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1006.73,6.272285461425781,9.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,1004.21,6.256015777587891,9.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,960.27,5.9588422775268555,10.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,960.94,5.949099779129028,10.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,961.81,5.954851150512695,10.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,961.21,5.935653209686279,10.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,964.27,5.95056676864624,10.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,900.36,5.497260570526123,12.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,903.77,5.502685308456421,12.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,900.89,5.497569561004639,12.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,905.52,5.5055317878723145,12.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,909.81,5.559838056564331,12.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,824.17,4.9428184032440186,16.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,827.31,4.940511465072632,16.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,827.10,4.946662425994873,16.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,824.77,4.938583850860596,16.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,827.42,4.936953067779541,16.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,780.42,4.596720457077026,20.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,792.32,4.66245436668396,20.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,782.45,4.601827621459961,20.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,781.17,4.608878135681152,20.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,789.73,4.659266710281372,20.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,746.56,4.378413200378418,24.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,751.32,4.378044843673706,24.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,751.74,4.399134159088135,24.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,752.21,4.384565353393555,24.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,751.51,4.386828422546387,24.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,780.17,4.38650369644165,28.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,785.38,4.364453077316284,28.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,794.99,4.4414284229278564,28.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,800.85,4.465874910354614,28.0,Parallel std::sort
+Sorting,250000.0,power/energy-pkg/,793.19,4.4016783237457275,28.0,Parallel std::sort

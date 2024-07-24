@@ -51,7 +51,7 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
                 if "Joules" in line:
                     line_split = [x.strip() for x in line.split(" Joules ")]
                     #print(f'"Data Generation","{line_split[1]}",{line_split[0]},{end-start}')
-                    energy_results.append({"MEASUREMENT": "Data Generation", "PERF_METRIC": line_split[1], "JOULES": line_split[0], "RUNTIME_S": end-start})
+                    energy_results.append({"MEASUREMENT": "Data Generation", "DATASET_SIZE": item_count, "PERF_METRIC": line_split[1], "JOULES": line_split[0], "RUNTIME_S": end-start})
             time.sleep(5)
             idle_command = "perf stat -e power/energy-pkg/ sleep 10"
             start2 = time.time()
@@ -83,7 +83,7 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
                     if "Joules" in line:
                         line_split = [x.strip() for x in line.split(" Joules ")]
                         #print(f'"Sorting","{line_split[1]}",{line_split[0]},{end-start}')
-                        energy_results.append({"MEASUREMENT": "Sorting", "PERF_METRIC": line_split[1], "JOULES": line_split[0], "RUNTIME_S": end-start})
+                        energy_results.append({"MEASUREMENT": "Sorting", "CORE_COUNT": core_count, "SORT_VARIANT": sort_name, "DATASET_SIZE": item_count, "PERF_METRIC": line_split[1], "JOULES": line_split[0], "RUNTIME_S": end-start})
 
             print(f"{sort_name} and {item_count} ({core_count} cores) >> average runtime: {cumu_runtime / 5} s", flush=True)
             results.append({"CORE_COUNT": core_count, "SORT_VARIANT": sort_name, "DATASET_SIZE": item_count, "AVG_RUNTIME_S": cumu_runtime / 5})
