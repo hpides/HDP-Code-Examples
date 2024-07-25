@@ -11,6 +11,8 @@ import time
 
 from pathlib import Path
 
+hostname = socket.gethostname()
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--gcc_path', required=True)
 parser.add_argument('--oneapi_path', required=True)
@@ -46,12 +48,12 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
     for item_count, size_mode in [(250_000, ""), (4_000_000, "-DLARGE_DATASET")]:
     #for item_count, size_mode in [(250_000, "")]:
         # Compile with flags.
-        compile_command = f"{args.gcc_path}/bin/g++ MemorySortBenchmark.cpp -O3 -o sort -L{args.oneapi_path} -std=c++20 -Wall -Wextra -pedantic -ltbb -D_GLIBCXX_PARALLEL -fopenmp {sort_mode} {size_mode}"
+        compile_command = f"{args.gcc_path}/bin/g++ MemorySortBenchmark.cpp -O3 -o sort__{hostname} -L{args.oneapi_path} -std=c++20 -Wall -Wextra -pedantic -ltbb -D_GLIBCXX_PARALLEL -fopenmp {sort_mode} {size_mode}"
         subprocess.run(shlex.split(compile_command), check=True)
 
         for stop_run in range(5):
             time.sleep(5)
-            stop_command = "perf stat -e power/energy-pkg/ ./sort STOP"
+            stop_command = f"perf stat -e power/energy-pkg/ ./sort__{hostname} STOP"
             start = time.time()
             result = subprocess.run(shlex.split(stop_command), capture_output=True, text=True, check=True, env=env_vars)
             end = time.time()
@@ -77,7 +79,7 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
             time.sleep(5)
             cumu_runtime = 0.0
             for run in range(5):
-                command = f"perf stat -e power/energy-pkg/ taskset -c 0-{core_count-1} ./sort"
+                command = f"perf stat -e power/energy-pkg/ taskset -c 0-{core_count-1} ./sort__{hostname}"
                 start = time.time()
                 result = subprocess.run(shlex.split(command), capture_output=True, text=True, check=True)
                 end = time.time()
@@ -103,6 +105,6 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
 df = pd.DataFrame(results)
 df_energy = pd.DataFrame(energy_results)
 
-df.to_csv("plotting/sorting/results.csv", index=False)
-df_energy.to_csv("plotting/sorting/results_energy.csv", index=False)
+df.to_csv(f"plotting/sorting/results__{hostname}.csv", index=False)
+df_energy.to_csv(f"plotting/sorting/results_energy__{hostname}.csv", index=False)
 
