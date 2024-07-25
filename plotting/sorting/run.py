@@ -29,13 +29,13 @@ while core_count <= multiprocessing.cpu_count():
     core_count += min(4, core_count)
 
 core_counts = sorted(core_counts)
-core_counts = core_counts[:15]
+#core_counts = core_counts[:15]
 
 results = []
 energy_results = []
 for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort", "-DPARALLEL_STD_SORT")]:
-    # for item_count, size_mode in [(250_000, ""), (4_000_000, "-DLARGE_DATASET")]:
-    for item_count, size_mode in [(250_000, "")]:
+    for item_count, size_mode in [(250_000, ""), (4_000_000, "-DLARGE_DATASET")]:
+    #for item_count, size_mode in [(250_000, "")]:
         # Compile with flags.
         compile_command = f"g++ MemorySortBenchmark.cpp -O3 -o sort -std=c++20 -Wall -Wextra -pedantic -ltbb {sort_mode} {size_mode}"
         subprocess.run(shlex.split(compile_command), check=True)
