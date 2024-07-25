@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
-import matplotlib.pyplot as plt
+import argparse
 import multiprocessing
 import os
 import pandas as pd
-import seaborn as sns
 import shlex
 import socket
 import subprocess
@@ -12,8 +11,18 @@ import time
 
 from pathlib import Path
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--gcc_path', required=True)
+parser.add_argument('--oneapi_path', required=True)
+args = parser.parse_args()
+
+assert (Path(args.gcc_path) / "bin").exists(), "GCC path is not set properly."
+assert (Path(args.oneapi_path) / "libtbb.so").exists(), "oneAPI path is not set properly."
+
 assert Path.cwd().name != "plotting", "Run from root."
 assert os.geteuid() == 0, "Must be run with sudo."
+
+env_vars = {"LD_LIBRARY_PATH": f"{args.gcc_path}/lib64/:{args.oneapi_path}"}
 
 runtime_marker = "Total duration: "
 
@@ -37,14 +46,14 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
     for item_count, size_mode in [(250_000, ""), (4_000_000, "-DLARGE_DATASET")]:
     #for item_count, size_mode in [(250_000, "")]:
         # Compile with flags.
-        compile_command = f"g++ MemorySortBenchmark.cpp -O3 -o sort -std=c++20 -Wall -Wextra -pedantic -ltbb {sort_mode} {size_mode}"
+        compile_command = f"{args.gcc_path}/bin/g++ MemorySortBenchmark.cpp -O3 -o sort -L{args.oneapi_path} -std=c++20 -Wall -Wextra -pedantic -ltbb {sort_mode} {size_mode}"
         subprocess.run(shlex.split(compile_command), check=True)
 
         for stop_run in range(5):
             time.sleep(5)
             stop_command = "perf stat -e power/energy-pkg/ ./sort STOP"
             start = time.time()
-            result = subprocess.run(shlex.split(stop_command), capture_output=True, text=True, check=True)
+            result = subprocess.run(shlex.split(stop_command), capture_output=True, text=True, check=True, env=env_vars)
             end = time.time()
             assert "Joules" in result.stderr, "No energy measurement found."
             for line in result.stderr.splitlines():
@@ -55,7 +64,7 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
             time.sleep(5)
             idle_command = "perf stat -e power/energy-pkg/ sleep 10"
             start2 = time.time()
-            result = subprocess.run(shlex.split(idle_command), capture_output=True, text=True, check=True)
+            result = subprocess.run(shlex.split(idle_command), capture_output=True, text=True, check=True, env=env_vars)
             end2 = time.time()
             assert "Joules" in result.stderr, "No energy measurement found."
             for line in result.stderr.splitlines():
