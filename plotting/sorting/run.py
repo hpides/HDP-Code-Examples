@@ -84,7 +84,7 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
             for run in range(5):
                 command = f"perf stat {perf_metrics} taskset -c 0-{core_count-1} ./sort__{hostname}"
                 start = time.time()
-                result = subprocess.run(shlex.split(command), capture_output=True, text=True, check=True)
+                result = subprocess.run(shlex.split(command), capture_output=True, text=True, check=True, env=env_vars)
                 end = time.time()
                 assert runtime_marker in result.stdout, "No result found."
                 assert "Joules" in result.stderr, "No energy measurement found."
