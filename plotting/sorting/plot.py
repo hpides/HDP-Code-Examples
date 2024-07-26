@@ -14,8 +14,8 @@ from pathlib import Path
 
 hostname = socket.gethostname()
 
-df = pd.read_csv("results.csv")
-df_energy = pd.read_csv("results_energy.csv")
+df = pd.read_csv(f"results__{hostname}.csv")
+df_energy = pd.read_csv(f"results_energy__{hostname}.csv")
 timestamp = int(time.time())
 
 df_energy_medians = df_energy.groupby(["MEASUREMENT", "DATASET_SIZE", "PERF_METRIC", "CORE_COUNT", "SORT_VARIANT"], dropna=False).median().reset_index()
