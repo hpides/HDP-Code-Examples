@@ -16,7 +16,7 @@ hostname = socket.gethostname()
 parser = argparse.ArgumentParser()
 parser.add_argument('--gcc_path', required=True)
 parser.add_argument('--oneapi_path', required=True)
-parser.add_argument('perf_metrics', nargs='+', help='Perf metric(s) to track', default=["power/energy-pkg/"])
+#parser.add_argument('perf_metrics', nargs='+', help='Perf metric(s) to track', default=["power/energy-pkg/"])
 args = parser.parse_args()
 
 assert (Path(args.gcc_path) / "bin").exists(), "GCC path is not set properly."
@@ -36,14 +36,16 @@ while core_count <= min(10, multiprocessing.cpu_count()):
     core_count += 1
 
 core_count = 1
-while core_count <= multiprocessing.cpu_count():
+while core_count <= min(112, multiprocessing.cpu_count()):
     core_counts.add(core_count)
     core_count += min(4, core_count)
 
 core_counts = sorted(core_counts)
 #core_counts = core_counts[:15]
+print(core_counts)
 
-perf_metrics = " ".join([f"-e {metric}" for metric in args.perf_metrics])
+#perf_metrics = " ".join([f"-e {metric}" for metric in args.perf_metrics])
+perf_metrics = ""
 
 results = []
 energy_results = []
@@ -56,6 +58,7 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
         subprocess.run(shlex.split(compile_command), check=True)
 
         for stop_run in range(5):
+            """
             time.sleep(5)
             stop_command = f"perf stat {perf_metrics} ./sort__{hostname} STOP"
             start = time.time()
@@ -78,17 +81,17 @@ for sort_name, sort_mode in [("Sequential std::sort", ""), ("Parallel std::sort"
                     line_split = [x.strip() for x in line.split(" Joules ")]
                     #print(f'"Idling","{line_split[1]}",{line_split[0]},{end2-start2}')
                     energy_results.append({"MEASUREMENT": "Idling", "PERF_METRIC": line_split[1], "JOULES": line_split[0], "RUNTIME_S": end2-start2})
+            """
 
         for core_count in core_counts:
             time.sleep(5)
             cumu_runtime = 0.0
             for run in range(5):
-                command = f"perf stat {perf_metrics} taskset -c 0-{core_count-1} ./sort__{hostname}"
+                command = f"taskset -c 0-{core_count-1} ./sort__{hostname}"
                 start = time.time()
                 result = subprocess.run(shlex.split(command), capture_output=True, text=True, check=True, env=env_vars)
                 end = time.time()
                 assert runtime_marker in result.stdout, "No result found."
-                assert "Joules" in result.stderr, "No energy measurement found."
                 for line in result.stdout.splitlines():
                     if line.startswith(runtime_marker):
                         #print(line)
