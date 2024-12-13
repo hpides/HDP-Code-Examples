@@ -89,11 +89,11 @@ for sort_name, sort_mode in [("Parallel std::sort", "-DPARALLEL_STD_SORT")]:
                     #print(f'"Sorting","{line_split[1]}",{line_split[0]},{end-start}')
                     energy_results.append({"MEASUREMENT": "Sorting", "CORE_COUNT": core_count, "SORT_VARIANT": sort_name, "DATASET_SIZE": item_count, "PERF_METRIC": line_split[1], "JOULES": line_split[0], "RUNTIME_S": end-start})
 
-            print(f"{sort_name} and {item_count} ({core_count} cores) >> average runtime: {cumu_runtime / 5} s", flush=True)
-            results.append({"CORE_COUNT": core_count, "SORT_VARIANT": sort_name, "DATASET_SIZE": item_count, "AVG_RUNTIME_S": cumu_runtime / 5})
+        print(f"{sort_name} and {item_count} ({core_count} cores) >> average runtime: {cumu_runtime / 5} s", flush=True)
+        results.append({"CORE_COUNT": core_count, "SORT_VARIANT": sort_name, "DATASET_SIZE": item_count, "AVG_RUNTIME_S": cumu_runtime / 5})
 
-            if "parallel" not in sort_name.lower():
-                break
+        if "parallel" not in sort_name.lower():
+            break
 
 df = pd.DataFrame(results)
 df_energy = pd.DataFrame(energy_results)
