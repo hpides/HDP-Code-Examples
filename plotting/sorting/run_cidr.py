@@ -29,8 +29,11 @@ export_command = f"export LD_LIBRARY_PATH={args.gcc_path}/lib64/:{args.oneapi_pa
 
 runtime_marker = "Total duration: "
 
+<<<<<<< HEAD
 perf_metrics = " ".join([f"-e {metric}" for metric in args.perf_metrics])
 
+=======
+>>>>>>> 4dcb07a4631d5c18887c935e53f61caaf5286051
 item_count = 4_000_000_000
 
 stop_runs = 5
@@ -110,5 +113,15 @@ for run in range(sorting_runs):
 
 avg_sorting_joules = sum(sorting_joules) / sorting_runs
 avg_sorting_runtime = sum(sorting_runtimes) / sorting_runs
-print(f"Avg. Joules sorting: {avg_sorting_joules}")
-print(f"Avg. runtime sorting: {avg_sorting_runtime} s")
+print(f"Avg. Joules sorting all: {avg_sorting_joules}")
+print(f"Avg. runtime sorting all: {avg_sorting_runtime} s")
+print("")
+
+print(f"Avg. Joules sorting: {avg_sorting_joules - avg_stop_joules}")
+print(f"Avg. runtime sorting: {avg_sorting_runtime - avg_stop_runtime} s")
+print("")
+
+sorted_tuples_per_second = item_count / (avg_sorting_runtime - avg_stop_runtime)
+sorted_tuples_per_joule = item_count / (avg_sorting_joules - avg_stop_joules)
+print(f"Sorted tuples per s: {sorted_tuples_per_second}")
+print(f"Sorted tuples per Joule: {sorted_tuples_per_joule}")

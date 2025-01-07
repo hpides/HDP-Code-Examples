@@ -98,3 +98,6 @@ for manufacturer_keyword in machine_grouping_keywords:
 
     plt.savefig(f"result_{manufacturer_keyword.replace(' ', '_')}.pdf", bbox_inches='tight' )
     plt.clf()
+
+    print(manufacturer_keyword)
+    print(str(df_copy.groupby(["MACHINE", "ELEMENT_COUNT", "SIZE_IN_BYTES"])["RUNTIME_NS_PER_ELEMENT"].mean().reset_index().query("SIZE_IN_BYTES > 16_000_000_000").sort_values(by="RUNTIME_NS_PER_ELEMENT")))
