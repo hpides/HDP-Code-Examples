@@ -52,7 +52,31 @@ for manufacturer_keyword in machine_grouping_keywords:
     if len(df_copy) == 0:
         continue
 
+    plot = sns.lineplot(df_copy, x="SIZE_LABEL", y="RUNTIME_NS_PER_ELEMENT", style="MACHINE", hue="MACHINE")
 
+    handles, labels = plot.get_legend_handles_labels()
+    # sort both labels and handles by labels
+    labels, handles = zip(*sorted(zip(labels, handles), key=lambda t: t[0]))
+    plot.legend(handles, labels)
+
+    sns.move_legend(plot, "upper left", bbox_to_anchor=(1, 1))
+
+    labels = plot.get_xticklabels() # get x labels
+    for ind, label in enumerate(labels):
+        if ind % 6 == 0:  # every 10th label is kept
+            label.set_visible(True)
+        else:
+            label.set_visible(False)
+
+    plot.set(xlabel="Data Size", ylabel="Runtime per element (ns)")
+
+    plt.savefig(f"result_{manufacturer_keyword.replace(' ', '_')}.pdf", bbox_inches='tight' )
+    plt.clf()
+
+for manufacturer_keyword in machine_grouping_keywords:
+    df_copy = df.query("MACHINE.str.contains(@manufacturer_keyword)").copy()
+    if len(df_copy) == 0:
+        continue
 
     plot = sns.lineplot(df_copy, x="SIZE_LABEL", y="RUNTIME_NS_PER_ELEMENT", style="MACHINE", hue="MACHINE")
 
