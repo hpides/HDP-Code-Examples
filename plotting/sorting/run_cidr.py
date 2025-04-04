@@ -29,11 +29,6 @@ export_command = f"export LD_LIBRARY_PATH={args.gcc_path}/lib64/:{args.oneapi_pa
 
 runtime_marker = "Total duration: "
 
-<<<<<<< HEAD
-perf_metrics = " ".join([f"-e {metric}" for metric in args.perf_metrics])
-
-=======
->>>>>>> 4dcb07a4631d5c18887c935e53f61caaf5286051
 item_count = 4_000_000_000
 
 stop_runs = 5
